@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { GOOGLE_FORM_URL } from './constants';
 
-
-export default function Navbar({ onRequestAccess }: { onRequestAccess: () => void }) {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -49,11 +49,9 @@ export default function Navbar({ onRequestAccess }: { onRequestAccess: () => voi
               Privacy Policy
             </Link>
             <a
-              href="mailto:contact@hireguard.online?subject=HireGuard%20AI%20%E2%80%94%20Access%20Request&body=Hi%20Wasim,%0D%0A%0D%0AI%20am%20interested%20in%20getting%20access%20to%20HireGuard%20AI.%0D%0A%0D%0AMy%20name:%0D%0AMy%20company:%0D%0AHow%20many%20hires%20per%20year:%0D%0A"
-              onClick={(e) => {
-                e.preventDefault();
-                onRequestAccess();
-              }}
+              href={GOOGLE_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#0ea5e9] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#0284c7] transition-colors whitespace-nowrap text-sm flex-shrink-0"
             >
               Request Access
@@ -116,12 +114,10 @@ export default function Navbar({ onRequestAccess }: { onRequestAccess: () => voi
           </Link>
           <div className="pt-2 pb-1">
             <a
-              href="mailto:contact@hireguard.online?subject=HireGuard%20AI%20%E2%80%94%20Access%20Request&body=Hi%20Wasim,%0D%0A%0D%0AI%20am%20interested%20in%20getting%20access%20to%20HireGuard%20AI.%0D%0A%0D%0AMy%20name:%0D%0AMy%20company:%0D%0AHow%20many%20hires%20per%20year:%0D%0A"
-              onClick={(e) => {
-                e.preventDefault();
-                onRequestAccess();
-                setIsOpen(false);
-              }}
+              href={GOOGLE_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
               className="block text-center w-full bg-[#0ea5e9] text-white px-4 py-2.5 rounded-lg font-medium hover:bg-[#0284c7] transition-colors whitespace-nowrap text-base"
             >
               Request Access

@@ -1,7 +1,7 @@
 import { Check, Lock } from 'lucide-react';
+import { GOOGLE_FORM_URL } from './constants';
 
-
-export default function Pricing({ onRequestAccess }: { onRequestAccess: () => void }) {
+export default function Pricing() {
   const features = [
     "Unlimited candidate analysis",
     "500+ job role templates",
@@ -74,11 +74,9 @@ export default function Pricing({ onRequestAccess }: { onRequestAccess: () => vo
             {/* CTA Button */}
             <div className="space-y-4">
               <a
-                href="mailto:contact@hireguard.online?subject=HireGuard%20AI%20%E2%80%94%20Purchase%20Request%20%E2%80%94%20%24349&body=Hi%20Wasim,%0D%0A%0D%0AI%20would%20like%20to%20purchase%20HireGuard%20AI%20at%20the%20Early%20Access%20price%20of%20%24349.%0D%0A%0D%0AMy%20name:%0D%0AMy%20company:%0D%0ANumber%20of%20employees:%0D%0AHow%20I%20heard%20about%20HireGuard%20AI:%0D%0A"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onRequestAccess();
-                }}
+                href={GOOGLE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full bg-[#0ea5e9] text-white font-bold text-lg py-4 rounded-xl hover:bg-[#0284c7] transition-colors text-center block whitespace-nowrap"
               >
                 Request Access — $349

@@ -1,6 +1,7 @@
 import { Shield } from 'lucide-react';
+import { GOOGLE_FORM_URL } from './constants';
 
-export default function Footer({ onRequestAccess }: { onRequestAccess: () => void }) {
+export default function Footer() {
   return (
     <footer className="bg-[#0a0a0a] text-white border-t border-brand-borderDefault pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,11 +51,9 @@ export default function Footer({ onRequestAccess }: { onRequestAccess: () => voi
                 </li>
                 <li>
                   <a 
-                    href="mailto:contact@hireguard.online?subject=HireGuard%20AI%20%E2%80%94%20Access%20Request&body=Hi%20Wasim,%0D%0A%0D%0AI%20am%20interested%20in%20getting%20access%20to%20HireGuard%20AI.%0D%0A%0D%0AMy%20name:%0D%0AMy%20company:%0D%0AHow%20many%20hires%20per%20year:%0D%0A" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onRequestAccess();
-                    }}
+                    href={GOOGLE_FORM_URL} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
                     className="text-sm text-brand-textMuted hover:text-white transition-colors"
                   >
                     Request Access

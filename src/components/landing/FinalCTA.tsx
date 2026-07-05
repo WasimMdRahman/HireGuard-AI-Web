@@ -1,7 +1,7 @@
 import { Check } from 'lucide-react';
+import { GOOGLE_FORM_URL } from './constants';
 
-
-export default function FinalCTA({ onRequestAccess }: { onRequestAccess: () => void }) {
+export default function FinalCTA() {
   return (
     <section className="bg-brand-accentPrimary py-20 md:py-28 text-white relative overflow-hidden">
       {/* Decorative background shape */}
@@ -25,11 +25,9 @@ export default function FinalCTA({ onRequestAccess }: { onRequestAccess: () => v
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-4 max-w-lg">
           <a
-            href="mailto:contact@hireguard.online?subject=HireGuard%20AI%20%E2%80%94%20Purchase%20Request%20%E2%80%94%20%24349&body=Hi%20Wasim,%0D%0A%0D%0AI%20would%20like%20to%20purchase%20HireGuard%20AI%20at%20the%20Early%20Access%20price%20of%20%24349.%0D%0A%0D%0AMy%20name:%0D%0AMy%20company:%0D%0ANumber%20of%20employees:%0D%0AHow%20I%20heard%20about%20HireGuard%20AI:%0D%0A"
-            onClick={(e) => {
-              e.preventDefault();
-              onRequestAccess();
-            }}
+            href={GOOGLE_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto flex-grow bg-white text-[#0ea5e9] hover:bg-sky-50 text-base font-bold px-8 py-4 rounded-xl shadow-sm hover:shadow-md transition-all text-center whitespace-nowrap"
           >
             Request Access — $349

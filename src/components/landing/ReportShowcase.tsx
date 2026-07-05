@@ -1,7 +1,7 @@
 import { Shield, ArrowRight } from 'lucide-react';
+import { GOOGLE_FORM_URL } from './constants';
 
-
-export default function ReportShowcase({ onRequestAccess }: { onRequestAccess: () => void }) {
+export default function ReportShowcase() {
   const highlights = [
     "Candidate match score with color-coded rating",
     "Risk flags by severity &mdash; High, Medium, Low",
@@ -43,11 +43,9 @@ export default function ReportShowcase({ onRequestAccess }: { onRequestAccess: (
             {/* Access CTA link */}
             <div className="pt-4">
               <a 
-                href="mailto:contact@hireguard.online?subject=HireGuard%20AI%20%E2%80%94%20Access%20Request%20%E2%80%94%20%24349&body=Hi%20Wasim,%0D%0A%0D%0AI%20would%20like%20to%20purchase%20access%20to%20HireGuard%20AI.%0D%0A%0D%0AMy%20name:%0D%0AMy%20company:%0D%0ANumber%20of%20hires%20per%20year:%0D%0AHow%20I%20heard%20about%20HireGuard%20AI:%0D%0A"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onRequestAccess();
-                }}
+                href={GOOGLE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-[#0ea5e9] hover:text-[#0284c7] font-bold text-base hover:underline group whitespace-nowrap"
               >
                 Request Access — $349
