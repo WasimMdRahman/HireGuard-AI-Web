@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { CONTACT_EMAIL } from './constants';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const faqs = [
+  const faqs: { q: string; a: ReactNode }[] = [
     {
       q: "Do I need technical knowledge?",
       a: "No technical knowledge required. The setup wizard guides you through connecting your API key step by step. If you can use email, you can use HireGuard AI."
@@ -28,7 +27,18 @@ export default function FAQ() {
     },
     {
       q: "What is your refund policy?",
-      a: "48-hour satisfaction guarantee. If HireGuard AI doesn't work as described contact us within 48 hours at " + CONTACT_EMAIL + " for a full refund."
+      a: (
+        <>
+          48-hour satisfaction guarantee. If HireGuard AI doesn't work as described contact us at{" "}
+          <a 
+            href="mailto:contact@hireguard.online?subject=HireGuard%20AI%20%E2%80%94%20Refund%20Request"
+            className="text-[#0ea5e9] hover:underline"
+          >
+            contact@hireguard.online
+          </a>{" "}
+          within 48 hours for a full refund.
+        </>
+      )
     }
   ];
 

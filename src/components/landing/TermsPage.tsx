@@ -7,7 +7,7 @@
 // before scaling commercially.
 
 import LegalPageHeader from './LegalPageHeader';
-import { CONTACT_EMAIL } from './constants';
+
 
 export default function TermsPage() {
   const sections = [
@@ -308,7 +308,7 @@ export default function TermsPage() {
                   <ul className="space-y-2 mt-2">
                     <li className="flex items-start gap-2">
                       <span className="text-brand-accentPrimary font-bold mt-0.5">&bull;</span>
-                      <span>Email <a href={`mailto:${CONTACT_EMAIL}`} className="text-brand-accentPrimary hover:underline">{CONTACT_EMAIL}</a> within 48 hours of purchase</span>
+                      <span>Email <a href="mailto:contact@hireguard.online" className="text-[#0ea5e9] hover:underline transition-colors duration-200">contact@hireguard.online</a> within 48 hours of purchase</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-brand-accentPrimary font-bold mt-0.5">&bull;</span>
@@ -489,7 +489,7 @@ export default function TermsPage() {
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-brand-accentPrimary font-bold mt-0.5">&bull;</span>
-                    <span>Email: <a href={`mailto:${CONTACT_EMAIL}`} className="text-brand-accentPrimary hover:underline">{CONTACT_EMAIL}</a></span>
+                    <span>Email: <a href="mailto:contact@hireguard.online" className="text-[#0ea5e9] hover:underline transition-colors duration-200">contact@hireguard.online</a></span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-brand-accentPrimary font-bold mt-0.5">&bull;</span>

@@ -1,7 +1,7 @@
 import { Shield } from 'lucide-react';
-import { GOOGLE_FORM_URL } from './constants';
 
-export default function Hero() {
+
+export default function Hero({ onRequestAccess }: { onRequestAccess: () => void }) {
   return (
     <section className="relative min-h-screen pt-32 pb-20 md:pt-40 md:pb-28 bg-brand-bgPrimary flex flex-col justify-center items-center overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in space-y-8 flex flex-col items-center">
@@ -39,12 +39,14 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-4 max-w-lg">
           <a
-            href={GOOGLE_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto flex-1 bg-brand-accentPrimary hover:bg-brand-accentHover text-white text-base font-bold px-8 py-4 rounded-xl shadow-sm transition-all text-center border border-transparent"
+            href="mailto:contact@hireguard.online?subject=HireGuard%20AI%20%E2%80%94%20Access%20Request%20%E2%80%94%20%24349&body=Hi%20Wasim,%0D%0A%0D%0AI%20would%20like%20to%20purchase%20access%20to%20HireGuard%20AI.%0D%0A%0D%0AMy%20name:%0D%0AMy%20company:%0D%0ANumber%20of%20hires%20per%20year:%0D%0AHow%20I%20heard%20about%20HireGuard%20AI:%0D%0A"
+            onClick={(e) => {
+              e.preventDefault();
+              onRequestAccess();
+            }}
+            className="w-full sm:w-auto flex-1 bg-[#0ea5e9] text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-[#0284c7] transition-colors text-center whitespace-nowrap"
           >
-            Request Access &mdash; $349
+            Request Access — $349
           </a>
           <a
             href="#how-it-works"

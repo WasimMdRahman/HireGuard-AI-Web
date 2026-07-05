@@ -1,8 +1,6 @@
 import { Shield } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { GOOGLE_FORM_URL, CONTACT_EMAIL } from './constants';
 
-export default function Footer() {
+export default function Footer({ onRequestAccess }: { onRequestAccess: () => void }) {
   return (
     <footer className="bg-[#0a0a0a] text-white border-t border-brand-borderDefault pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,10 +18,10 @@ export default function Footer() {
               AI hiring assistant for teams without HR.
             </p>
             <a 
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="block text-sm text-brand-accentPrimary hover:text-brand-accentLight font-semibold mt-2"
+              href="mailto:contact@hireguard.online"
+              className="text-[#0ea5e9] text-sm hover:underline transition-colors mt-2 block"
             >
-              {CONTACT_EMAIL}
+              contact@hireguard.online
             </a>
           </div>
 
@@ -52,9 +50,11 @@ export default function Footer() {
                 </li>
                 <li>
                   <a 
-                    href={GOOGLE_FORM_URL} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                    href="mailto:contact@hireguard.online?subject=HireGuard%20AI%20%E2%80%94%20Access%20Request&body=Hi%20Wasim,%0D%0A%0D%0AI%20am%20interested%20in%20getting%20access%20to%20HireGuard%20AI.%0D%0A%0D%0AMy%20name:%0D%0AMy%20company:%0D%0AHow%20many%20hires%20per%20year:%0D%0A" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onRequestAccess();
+                    }}
                     className="text-sm text-brand-textMuted hover:text-white transition-colors"
                   >
                     Request Access
@@ -70,14 +70,20 @@ export default function Footer() {
               </h4>
               <ul className="space-y-3">
                 <li>
-                  <Link to="/terms" className="text-sm text-brand-textMuted hover:text-white transition-colors">
+                  <a 
+                    href="/terms" 
+                    className="text-[#737373] hover:text-white text-sm transition-colors"
+                  >
                     Terms of Service
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link to="/privacy" className="text-sm text-brand-textMuted hover:text-white transition-colors">
+                  <a 
+                    href="/privacy" 
+                    className="text-[#737373] hover:text-white text-sm transition-colors"
+                  >
                     Privacy Policy
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>

@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import Navbar from './components/landing/Navbar';
 import Hero from './components/landing/Hero';
@@ -15,6 +15,7 @@ import FinalCTA from './components/landing/FinalCTA';
 import Footer from './components/landing/Footer';
 import TermsPage from './components/landing/TermsPage';
 import PrivacyPage from './components/landing/PrivacyPage';
+import RequestAccessModal from './components/RequestAccessModal';
 
 // Scroll to top helper on route transit
 function ScrollToTop() {
@@ -37,11 +38,11 @@ function ScrollToTop() {
   return null;
 }
 
-function LandingPage() {
+function LandingPage({ onRequestAccess }: { onRequestAccess: () => void }) {
   return (
     <>
       {/* SECTION 2 — HERO SECTION */}
-      <Hero />
+      <Hero onRequestAccess={onRequestAccess} />
 
       {/* SECTION 3 — SOCIAL PROOF BAR */}
       <SocialProof />
@@ -56,43 +57,49 @@ function LandingPage() {
       <HowItWorks />
 
       {/* SECTION 7 — PDF REPORT SHOWCASE */}
-      <ReportShowcase />
+      <ReportShowcase onRequestAccess={onRequestAccess} />
 
       {/* SECTION 8 — PRIVACY AND SECURITY */}
       <Security />
 
       {/* SECTION 9 — PRICING */}
-      <Pricing />
+      <Pricing onRequestAccess={onRequestAccess} />
 
       {/* SECTION 10 — FAQ */}
       <FAQ />
 
       {/* SECTION 11 — FINAL CTA */}
-      <FinalCTA />
+      <FinalCTA onRequestAccess={onRequestAccess} />
     </>
   );
 }
 
 export default function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
     <BrowserRouter>
       <ScrollToTop />
       <div className="min-h-screen bg-brand-bgPrimary text-brand-textPrimary flex flex-col w-full">
         {/* SECTION 1 — NAVIGATION BAR */}
-        <Navbar />
+        <Navbar onRequestAccess={handleOpenModal} />
 
         {/* Core routing area */}
         <main className="flex-grow w-full">
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<LandingPage onRequestAccess={handleOpenModal} />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
           </Routes>
         </main>
 
         {/* SECTION 12 — FOOTER */}
-        <Footer />
+        <Footer onRequestAccess={handleOpenModal} />
       </div>
+
+      <RequestAccessModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </BrowserRouter>
   );
 }

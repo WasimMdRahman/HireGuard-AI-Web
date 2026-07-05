@@ -7,7 +7,7 @@
 // before scaling commercially.
 
 import LegalPageHeader from './LegalPageHeader';
-import { CONTACT_EMAIL } from './constants';
+
 
 export default function PrivacyPage() {
   const sections = [
@@ -73,7 +73,7 @@ export default function PrivacyPage() {
                   HireGuard AI is an AI-powered hiring assistance tool built for small businesses and founders hiring without a dedicated HR team.
                 </p>
                 <p>
-                  Contact: <a href={`mailto:${CONTACT_EMAIL}`} className="text-brand-accentPrimary hover:underline">{CONTACT_EMAIL}</a><br />
+                  Contact: <a href="mailto:contact@hireguard.online" className="text-[#0ea5e9] hover:underline transition-colors duration-200">contact@hireguard.online</a><br />
                   Website: hireguard.online
                 </p>
               </div>
@@ -419,7 +419,7 @@ export default function PrivacyPage() {
                 </ul>
                 <p className="mt-2">
                   To exercise any of these rights:<br />
-                  Email: <a href={`mailto:${CONTACT_EMAIL}`} className="text-brand-accentPrimary hover:underline">{CONTACT_EMAIL}</a><br />
+                  Email: <a href="mailto:contact@hireguard.online" className="text-[#0ea5e9] hover:underline transition-colors duration-200">contact@hireguard.online</a><br />
                   Response time: Within 30 days
                 </p>
               </div>
@@ -491,7 +491,7 @@ export default function PrivacyPage() {
               </h2>
               <div className="text-sm text-brand-textSecondary leading-relaxed">
                 <p>
-                  HireGuard AI is not intended for users under 18 years of age. We do not knowingly collect personal data from minors. If you believe a minor has provided data, contact <a href={`mailto:${CONTACT_EMAIL}`} className="text-brand-accentPrimary hover:underline">{CONTACT_EMAIL}</a> immediately.
+                  HireGuard AI is not intended for users under 18 years of age. We do not knowingly collect personal data from minors. If you believe a minor has provided data, contact <a href="mailto:contact@hireguard.online" className="text-[#0ea5e9] hover:underline transition-colors duration-200">contact@hireguard.online</a> immediately.
                 </p>
               </div>
             </section>
@@ -566,7 +566,7 @@ export default function PrivacyPage() {
                   For privacy questions or to exercise your rights:
                 </p>
                 <p>
-                  Email: <a href={`mailto:${CONTACT_EMAIL}`} className="text-brand-accentPrimary hover:underline">{CONTACT_EMAIL}</a><br />
+                  Email: <a href="mailto:contact@hireguard.online" className="text-[#0ea5e9] hover:underline transition-colors duration-200">contact@hireguard.online</a><br />
                   Subject line: &quot;Privacy Request &mdash; [Your Request Type]&quot;<br />
                   Response time: Within 30 days
                 </p>
