@@ -7,6 +7,7 @@ import SocialProof from './components/landing/SocialProof';
 import Problem from './components/landing/Problem';
 import Features from './components/landing/Features';
 import HowItWorks from './components/landing/HowItWorks';
+import Guides from './components/landing/Guides';
 import ReportShowcase from './components/landing/ReportShowcase';
 import Security from './components/landing/Security';
 import Pricing from './components/landing/Pricing';
@@ -54,6 +55,9 @@ function LandingPage() {
 
       {/* SECTION 6 — HOW IT WORKS */}
       <HowItWorks />
+
+      {/* SECTION 6.5 — SETUP & USAGE GUIDES */}
+      <Guides />
 
       {/* SECTION 7 — PDF REPORT SHOWCASE */}
       <ReportShowcase />

@@ -39,6 +39,9 @@ export default function Navbar() {
             <a href="/#how-it-works" className="text-brand-textSecondary hover:text-white font-medium transition-colors text-sm">
               How It Works
             </a>
+            <a href="/#guides" className="text-brand-textSecondary hover:text-white font-medium transition-colors text-sm">
+              Guides
+            </a>
             <a href="/#pricing" className="text-brand-textSecondary hover:text-white font-medium transition-colors text-sm">
               Pricing
             </a>
@@ -90,6 +93,13 @@ export default function Navbar() {
             className="block px-3 py-2 rounded-md text-base font-medium text-brand-textSecondary hover:text-white hover:bg-brand-bgSecondary"
           >
             How It Works
+          </a>
+          <a
+            href="/#guides"
+            onClick={() => setIsOpen(false)}
+            className="block px-3 py-2 rounded-md text-base font-medium text-brand-textSecondary hover:text-white hover:bg-brand-bgSecondary"
+          >
+            Guides
           </a>
           <a
             href="/#pricing"
